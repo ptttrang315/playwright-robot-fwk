@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "practice-expand-testing"
+version = "0.1.0"
+description = "This is sample Playwright tests with Robot Framework in Python"
+authors = ["Trang Pham <trangptt315@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+playwright = "^1.43.0"
+robotframework = "^7.0"
+robotframework-pythonlibcore = "^4.4.1"
+selenium = "^4.19.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
