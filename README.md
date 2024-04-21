@@ -8,7 +8,9 @@
 * [Create the project for test libraries](#create-the-project-for-test-libraries)
   * [Initialize the project](#initialize-the-project)
   * [Open the project in IDE - PyCharm](#open-the-project-in-ide---pycharm)
-<!-- TOC -->>
+  
+* [Create new test cases](#create-new-test-cases)
+<!-- TOC -->
 
 # Set up the environment
 ## Download and install Python
@@ -125,21 +127,60 @@ I've already added the packages of `robotframework` and `playwright` above. So, 
 
 Those dependencies will be installed in project `.venv`.
 
-Save the project dependencies to `requirements.txt` file by using the command:
-
-`poetry export --without-hashes --format=requirements.txt --output=requirements.txt`
-
-The `requirements.txt` file will be created in the project root folder.
-
 If you decide to set up the same project on another machine, you can install the dependencies by using the command:
 
 `poetry install`
 
 So, now we just need to install Python, poetry, and no need to add packages one by one. Just run the command `poetry install` to install all the dependencies in the project.
 
+Save the project dependencies to `requirements.txt` file by using the command:
+
+`poetry export --without-hashes --format=requirements.txt --output=requirements.txt`
+
+The `requirements.txt` file will be created in the project root folder. This file will support users if they want to use `pip` instead of `poetry` to install the dependencies.
+
+`pip install -r .\requirements.txt`
+
+After run this command, the user can install the dependencies in the project by using `pip` instead of `poetry`.
+
+* NOTE:
+We should export the requirements file after adding new packages to the project. Because the `requirements.txt` file will be overwritten with the new dependencies.
+
 Create a `git.ignore` file in the project root folder to ignore the `Virtualenv` folder `.venv` and `poetry.lock` folder.
 
 `.venv/`
 `poetry.lock`
 `.idea/`
+
+# Create new test cases
+We need to add another package to integrate with Playwright. Following to https://robotframework.org/, they have the new library that supports for Playwright
+![img_16.png](docs/img_16.png)
+
+Run the command `poetry add robotframework-browser` to add the new library
+
+![img_15.png](docs/img_15.png)
+
+We need to activate the virtualenv in the project before running the robot command. If we don't activate the virtualenv, the robot command will not be recognized.
+
+`.\.venv\Scripts\activate`
+
+Check the robot version
+
+`robot --version`
+
+Initialize robot browser with playwright
+
+`rfbrowser init`
+
+Command to run a test in file test.robot
+
+`robot test.robot`
+
+
+
+
+
+
+
+
 

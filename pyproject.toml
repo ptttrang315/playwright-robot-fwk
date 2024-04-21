@@ -11,6 +11,7 @@ playwright = "^1.43.0"
 robotframework = "^7.0"
 robotframework-pythonlibcore = "^4.4.1"
 selenium = "^4.19.0"
+robotframework-browser = "^18.3.0"
 
 
 [build-system]
