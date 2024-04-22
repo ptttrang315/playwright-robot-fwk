@@ -176,6 +176,14 @@ Command to run a test in file test.robot
 
 `robot test.robot`
 
+## Add .yml file for elements
+Create a new file `caloriesTrackerElements.yml` in the project folder to store the elements of the page. This file will be used to store the locator of the elements in the page.
+You need to install the package `pyyaml` to use the yaml file in the project.
+
+`poetry add pyyaml`
+
+
+
 
 
 

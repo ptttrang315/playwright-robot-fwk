@@ -5,8 +5,6 @@ Resource    ../page-objects/elements/homePage.resource
 Resource    ../page-objects/keywords/homePage.resource
 Resource    ../page-objects/keywords/caloriesTracker.resource
 
-Library    caloriesTracker.operations
-
 *** Test Cases ***
 Add a meal or food item to the list
     [Documentation]    This is an example test case
@@ -18,5 +16,9 @@ Add a meal or food item to the list
     ${calories2}    Get The Calories    1
     ${sum}    Calculate The Calories    ${calories1}    ${calories2}    addmeal
 
+
+Check test
+    [Tags]    test
+    Get Locator    caloríesTrackerElements.AddItemInput
 
 
