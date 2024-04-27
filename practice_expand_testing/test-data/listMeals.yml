@@ -1,0 +1,10 @@
+pizza: 1200
+burger: 800
+pasta: 1000
+sandwich: 600
+salad: 400
+
+deleteMeals:
+  pizza: 1200
+  burger: 800
+  sandwich: 600

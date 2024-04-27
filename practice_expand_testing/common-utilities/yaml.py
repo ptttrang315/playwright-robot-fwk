@@ -35,3 +35,18 @@ class YamlUtils:
         value = self._traverse_yaml(yaml_data, key_path.split('.'))
         print(value)
         return value
+
+    @keyword('convertYamlToDictionary')
+    def load_yaml(self, yaml_string):
+        try:
+            return yaml.safe_load(yaml_string)
+        except Exception as e:
+            raise ValueError(f"Invalid YAML: {yaml_string}")
+
+    @keyword
+    def get_dictionary_key(self, dictionary):
+        return dictionary.keys()
+
+    @keyword
+    def get_dictionary_value(self, dictionary, key):
+        return dictionary.get(key)

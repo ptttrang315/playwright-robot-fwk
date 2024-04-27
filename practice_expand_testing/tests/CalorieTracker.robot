@@ -1,8 +1,10 @@
 *** Settings ***
-Library   Browser
-Library   String
-Library   .yaml.YamlUtils
-Library   keywords.caloriesTracker.operations
+Library    Browser
+Library    String
+Library    OperatingSystem
+Library    Collections
+Library    .yaml.YamlUtils
+Library    keywords.caloriesTracker.operations
 Resource    ../page-objects/elements/homePage.resource
 Resource    ../page-objects/keywords/homePage.resource
 Resource    ../page-objects/keywords/caloriesTracker.resource
@@ -20,7 +22,18 @@ Add a meal or food item to the list
     ${totalCalories}    Get The Total Calories    practice_expand_testing/page-objects/elements/caloriesTrackerElements.yml    caloriesTrackerElements.totalCalories
     Should Be Equal As Numbers    ${sum}    ${totalCalories}
 
-
+Testing case
+    [Tags]    testName
+    Set Browser Timeout    30
+    Go To "Calories Tracker" Page
+    ${yamlString}    Get File    practice_expand_testing/test-data/listMeals.yml
+    ${list}    Convert YAML To Dictionary    ${yamlString}
+    ${keys} =    Get Dictionary Keys    ${list}    False
+    FOR    ${key}    IN    @{keys}
+        ${calories}    Get Dictionary Value    ${list}    ${key}
+        Add Meal And Calories    ${key}    ${calories}
+    END
+    
 
 
 
