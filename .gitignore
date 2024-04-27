@@ -6,3 +6,4 @@ report.html
 poetry.lock
 .idea
 **.pyc
+playwright-log*

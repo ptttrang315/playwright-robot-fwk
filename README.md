@@ -177,10 +177,25 @@ Command to run a test in file test.robot
 `robot test.robot`
 
 ## Add .yml file for elements
-Create a new file `caloriesTrackerElements.yml` in the project folder to store the elements of the page. This file will be used to store the locator of the elements in the page.
+Create a new file `.yml` in the project folder to store the elements of the page. This file will be used to store the locator of the elements in the page.
 You need to install the package `pyyaml` to use the yaml file in the project.
 
 `poetry add pyyaml`
+
+But we need to have some code to read the yaml file and get the locator of the elements. 
+First, we will create a new file `yaml.py` for using the yaml file.
+- Get absolute path of the yaml file
+- Load the yaml file
+- Get the value of the key in the yaml file
+
+Second,for the `.py` file, in test cases, we will define the library to use the yaml file with the format `Library   .<.py file>.<class_name>`. For example:
+
+`Library   .yaml.YamlUtils`
+
+And we need to add the path of the yaml file to the command to run the test cases.
+
+`--pythonpath=practice_expand_testing\common-utilities`
+
 
 
 

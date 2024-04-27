@@ -1,4 +1,7 @@
-caloríesTrackerElements:
-  AddItemInput: xpath=//input[@id= "item-name"]
-  AddCaloriesInput: xpath=//input[@id= "item-calories"]
-  AddMealButton: xpath=//button[contains(text(), "Add Meal")]
+caloriesTrackerElements:
+  addItemInput: xpath=//input[@id= "item-name"]
+  addCaloriesInput: xpath=//input[@id= "item-calories"]
+  addMealButton: xpath=//button[contains(text(), "Add Meal")]
+  mealCalories: xpath=//*[@id="item-${index}"]/em
+  totalCalories: xpath=//*[@class='total-calories']
+
